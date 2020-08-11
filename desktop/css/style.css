@@ -35,6 +35,20 @@ body
     background-color: #141414;
 }
 
+.a-video-again::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.a-video-again::-webkit-scrollbar,
+body::-webkit-scrollbar
+{
+    display: none;
+    width: 3px;
+    height: 3px;
+}
+
 /* Header */
 
 header
@@ -60,6 +74,8 @@ header
     height: 100%;
     background-size: contain;
     margin: 22px 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .a-menu-div
@@ -121,10 +137,122 @@ header
     align-items: center;
 }
 
+.img-config img
+{
+    width: 32px;
+}
+
 .img-config i
 {
     margin-left: 10px;
     font-size: 14px;
+}
+
+.a-profiles
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.4s ease all;
+}
+
+.profiles
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.profiles h1
+{
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 65px;
+    margin: 0 0 40px 0;
+}
+
+section.container-profiles span
+{
+    color: grey;
+    font-family: sans-serif;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+}
+
+section.one-profile:hover span,
+section.two-profile:hover span,
+section.three-profile:hover span,
+section.four-profile:hover span,
+section.five-profile:hover span
+{
+    color: #fff;
+}
+
+section.container-profiles
+{
+    display: flex;
+}
+
+section.one-profile,
+section.two-profile,
+section.three-profile,
+section.four-profile,
+section.five-profile
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+section.one-profile:hover img,
+section.two-profile:hover img,
+section.three-profile:hover img,
+section.four-profile:hover img,
+section.five-profile:hover img
+{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.container-profiles section img
+{
+    width: 192px;
+    border: 5px solid rgba(0,0,0,.4);
+    background-color: #333;
+}
+
+section.five-profile
+{
+    margin-right: 0;
+}
+
+button.button-profile
+{
+    padding: 10px 35px;
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey;
+    font-family: sans-serif;
+    font-size: 22px;
+    margin: 100px 0 0 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+button.button-profile:hover
+{
+    color: #fff;
+    border: 1px solid #fff;
 }
 
 /* Main */
@@ -229,32 +357,48 @@ main.a-main
 }
 
 section.a-video-again,
-section.a-video-high
+section.a-video-high,
+section.a-video-favority,
+section.a-video-mylist
 {
-    margin: 0 0 40px 0;
+    margin: 0 0 4em 0;
     height: 190px;
-    width: 100%;
     display: table-cell;
     white-space: nowrap;
-    overflow: hidden;
+    transition: 0.4s all;
     position: relative;
-    transform: translate3d(0%, 0px, 0px)
+    padding: 0 60px;
+    overflow-x: visible;
+}
+
+span.video-animation-translate
+{
+    display: table-cell;
+    white-space: nowrap;
+    transition: 0.4s all;
+    position: relative;
+    /* transform: translate3d(-100.4%, 0px, 0px; */
+    transform: translate3d(0, 0px, 0px);
+    overflow-x: visible;
+    width: 93.8%;
+    height: 190px;
+    position: absolute;
 }
 
 .video-arrow-left,
 .video-arrow-right
 {
     position: absolute;
+    z-index: 1;
 }
 
 
 .video-arrow-right,
 .video-arrow-left
 {
-    width: 52px;
+    width: 56px;
     right: 0px;
-    top: 41px;
-    height: 153px;
+    height: 166px;
     color: #fff;
     font-size: 38px;
     background-color: rgba(20,20,20,.5);
@@ -286,49 +430,24 @@ section.a-video-high
 }
 
 .a-video-again h2,
-.a-video-high h2
+.a-video-high h2,
+.a-video-favority h2,
+.a-video-mylist h2
 {
     color: #fff;
     font-family: sans-serif;
     font-size: 26px;
-    margin: 0 0 15px 50px;
+    margin: 0 0 15px 0;
 }
 
-.video-blacklist
-{
-    background: url(../images/blacklist.png) no-repeat center;
-}
-
-.video-blindspot
-{
-    background: url(../images/blindspot.png) no-repeat center;
-}
-
-.video-suits
-{
-    background: url(../images/suits.png) no-repeat center;
-}
-
-.video-freshprinceofbelair
-{
-    background: url(../images/freshprinceofbelair.png) no-repeat center;
-}
-
-.video-billions
-{
-    background: url(../images/billions.png) no-repeat center;
-}
-
-.video-lastman
-{
-    background: url(../images/lastman.png) no-repeat center;
-}
-
-section.a-video-again div
+section.a-video-again div,
+section.a-video-high div,
+section.a-video-favority div,
+section.a-video-mylist div
 {
     background-size: cover;
     height: 166px;
-    width: 16%;
+    width: 16.69999%;
     display: inline-block;
 }
 
