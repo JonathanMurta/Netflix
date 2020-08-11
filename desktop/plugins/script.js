@@ -59,6 +59,10 @@ jsAll("section.container-profiles section").forEach((element) =>
     element.addEventListener("click", (e) =>
     {
         js(".a-profiles").style.opacity = 0
+        setTimeout(() =>
+        {
+            js(".a-profiles").style.display = "none"
+        }, 400);
         js(".img-config img").setAttribute("src", element.children[0].getAttribute("src"))
     })
 })
