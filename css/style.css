@@ -354,6 +354,7 @@ main.a-main
     flex-direction: column;
     /* margin: 0 0 0 50px; */
     min-height: 1000px;
+    overflow: hidden;
 }
 
 section.a-video-again,
